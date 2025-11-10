@@ -1,5 +1,7 @@
 # Intelligent Enterprise Assistant (SIH1706) - Full Version (Demo-ready)
 
+## NAME : HARISH R
+## REG NO: 212224230085
 ## Overview
 This project is a full-version demo for the Hackathon problem **SIH1706**:
 "Intelligent Enterprise Assistant: Enhancing Organizational Efficiency through AI-driven Chatbot Integration".
@@ -42,9 +44,9 @@ It contains:
 
 ## Structure
 See `project_structure.txt` for a full layout.
+## output 
+<img width="1803" height="1141" alt="image" src="https://github.com/user-attachments/assets/09a32333-cfb6-4ce6-8d38-19a078e2a839" />
 
----
-Enjoy! If you want, I can now:
-- Add Dockerfile and Docker Compose
-- Add a small JS-based admin UI to upload knowledge base JSON files
-- Integrate an actual hosted LLM (requires API key)
+<img width="1919" height="1090" alt="image" src="https://github.com/user-attachments/assets/b18a3028-8f17-46e9-93d7-02dcb015d96d" />
+
+
