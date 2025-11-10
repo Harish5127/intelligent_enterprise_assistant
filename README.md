@@ -1,0 +1,50 @@
+# Intelligent Enterprise Assistant (SIH1706) - Full Version (Demo-ready)
+
+## Overview
+This project is a full-version demo for the Hackathon problem **SIH1706**:
+"Intelligent Enterprise Assistant: Enhancing Organizational Efficiency through AI-driven Chatbot Integration".
+
+It contains:
+- Email-based 2FA (OTP) login (SMTP required)
+- Chat UI (Flask + frontend JS)
+- NLP chatbot engine (uses Hugging Face transformers **if available**; otherwise a lightweight keyword-based fallback)
+- Document upload (PDF) → text extraction → extractive summarization + keyword extraction
+- Profanity filter (uses `better_profanity` if installed; otherwise a small built-in list)
+- Simple SQLite-based storage for users and OTPs
+- Concurrency-friendly Flask endpoints (suitable for demos / testing). For production use a WSGI server (gunicorn) + proper reverse proxy.
+
+## Quick start (Windows / VS Code)
+1. Open this folder in VS Code.
+2. Create & activate a venv:
+   ```bash
+   python -m venv venv
+   venv\Scripts\activate
+   ```
+3. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+   *If you plan to use transformers models, you'll also need `torch` and internet to download models on first run.*
+4. Configure email SMTP settings (for 2FA):
+   - Create a file named `.env` in the project root (see `.env.example`)
+     or export environment variables: `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS`, `FROM_EMAIL`.
+5. Run the app:
+   ```bash
+   python app.py
+   ```
+6. Open `http://127.0.0.1:5000` in your browser.
+
+## Notes & Limitations
+- For a production-ready system, deploy with a WSGI server, use HTTPS, rate-limiting, robust auth,
+  and a real LLM or retrieval-augmented generation (RAG) pipeline.
+- This demo keeps models optional: if you have `transformers` + `sentence-transformers` + `torch` installed,
+  the app will try to use them for better semantic matching. If not present, it uses a simple keyword matching engine.
+
+## Structure
+See `project_structure.txt` for a full layout.
+
+---
+Enjoy! If you want, I can now:
+- Add Dockerfile and Docker Compose
+- Add a small JS-based admin UI to upload knowledge base JSON files
+- Integrate an actual hosted LLM (requires API key)

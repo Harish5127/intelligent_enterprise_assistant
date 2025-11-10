@@ -1,0 +1,10 @@
+[
+  {
+    "question": "How to reset my password?",
+    "answer": "Use the 'Forgot Password' link on the SSO page or contact IT support at itsupport@example.com."
+  },
+  {
+    "question": "VPN not working",
+    "answer": "Ensure your VPN client is updated and credentials are valid. If issue persists, create a ticket."
+  }
+]

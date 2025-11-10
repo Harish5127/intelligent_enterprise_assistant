@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head><meta charset='utf-8'><title>Login - Intelligent Assistant</title></head>
+<body>
+  <h2>Login (Email + OTP)</h2>
+  <input id="email" placeholder="you@example.com" />
+  <button id="send">Send OTP</button>
+  <div id="steps" style="margin-top:1rem;"></div>
+  <script>
+  async function sendOtp(){
+    const email = document.getElementById('email').value.trim();
+    const res = await fetch('/send_otp', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({email})});
+    const json = await res.json();
+    if(json.ok){
+      document.getElementById('steps').innerHTML = `OTP sent to ${email}. Enter OTP: <input id='otp' /> <button onclick='verify()'>Verify</button>`;
+    } else {
+      alert('Error sending OTP');
+    }
+  }
+  async function verify(){
+    const email = document.getElementById('email').value.trim();
+    const otp = document.getElementById('otp').value.trim();
+    const res = await fetch('/verify_otp', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({email, otp})});
+    const j = await res.json();
+    if(j.ok){ window.location = '/'; } else { alert('Invalid OTP'); }
+  }
+  document.getElementById('send').addEventListener('click', sendOtp);
+  </script>
+</body>
+</html>

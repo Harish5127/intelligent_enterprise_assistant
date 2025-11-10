@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset='utf-8'><title>Intelligent Assistant</title>
+  <style>
+  body{font-family:Arial,Helvetica,sans-serif; margin:1rem;}
+  #chat{border:1px solid #ddd; min-height:300px; padding:1rem; overflow:auto;}
+  .user{ text-align:right; color:blue; }
+  .bot{ text-align:left; color:green; }
+  </style>
+</head>
+<body>
+  <h2>Intelligent Enterprise Assistant</h2>
+  <p>Logged in as: {{ user }}</p>
+  <a href="/logout">Logout</a>
+  <div id="chat"></div>
+  <input id="entry" placeholder="Type your question..." style="width:60%" />
+  <button id="send">Send</button>
+  <hr />
+  <h3>Upload Document (PDF)</h3>
+  <input id="file" type="file" />
+  <button id="upload">Upload & Summarize</button>
+  <div id="docresult"></div>
+  <script src="/static/chat.js"></script>
+</body>
+</html>

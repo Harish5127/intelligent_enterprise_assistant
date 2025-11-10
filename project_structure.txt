@@ -1,0 +1,20 @@
+intelligent_enterprise_assistant/
+├── app.py
+├── auth.py
+├── chatbot_engine.py
+├── document_processor.py
+├── profanity_filter.py
+├── utils.py
+├── requirements.txt
+├── .env.example
+├── templates/
+│   ├── login.html
+│   └── index.html
+├── static/
+│   └── chat.js
+├── data/
+│   ├── hr_faq.json
+│   ├── it_support.json
+│   └── sample_documents/
+│       └── sample_doc.txt
+└── README.md
